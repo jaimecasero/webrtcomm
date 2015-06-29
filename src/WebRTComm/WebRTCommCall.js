@@ -964,7 +964,7 @@ WebRTCommCall.prototype.createRTCPeerConnection = function() {
 	    if (this.webRTCommClient.configuration.RTCPeerConnection.stunServer)
 	    {
 		rtcPeerConnectionConfiguration.iceServers.push({
-		    url: "stun:" + this.webRTCommClient.configuration.RTCPeerConnection.stunServer
+		    urls: "stun:" + this.webRTCommClient.configuration.RTCPeerConnection.stunServer
 		});
 	    }
 	    if (this.webRTCommClient.configuration.RTCPeerConnection.turnServer
@@ -972,7 +972,7 @@ WebRTCommCall.prototype.createRTCPeerConnection = function() {
 		    && this.webRTCommClient.configuration.RTCPeerConnection.turnPassword)
 	    {
 		rtcPeerConnectionConfiguration.iceServers.push({
-		    url: "turn:" + this.webRTCommClient.configuration.RTCPeerConnection.turnServer,
+		    urls: "turn:" + this.webRTCommClient.configuration.RTCPeerConnection.turnServer,
 		    username: this.webRTCommClient.configuration.RTCPeerConnection.turnLogin,
 		    credential: this.webRTCommClient.configuration.RTCPeerConnection.turnPassword
 		});
